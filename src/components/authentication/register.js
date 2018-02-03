@@ -40,50 +40,64 @@ class Register extends Component {
                 if (response.status === 201) {
                     localStorage.setItem('token', response.data.token);
                     this.setState({loggedIn: response.data.token});
-                    this.props.history.push("/homepage");
-
-
-
-
+                    this.props.history.push("/dashboard");
                 }
             }.bind(this))
-            .catch(function () {
-                NotificationManager.error(`Email already exists`);
+            .catch(function (error) {
+                NotificationManager.error(error.response.data.Error);
             });
     };
     render() {
 
             return (
 
-              <div className="container-fluid text-center ">
+              <div className=" Register_container container-fluid ">
+
                   <div className="col-md-4 col-md-offset-4 col-sm-9 auth-box">
-                      <div className="ted" id="ted">
-                          <div className="loghead" id="loghead">
-                              <h4 className="panel-title">REGISTER</h4>
 
-                          </div>
-                          <div className="panel-body">
-                              <form onSubmit={this.onRegisterClick}>
-                                    <Row id="Log_row">
-                                        <Input  value="" name="name" onChange={this.onInputChanged} type="text" label="Name" s={12} />
-                                        <Input  value="" name="email" onChange={this.onInputChanged} type="email" label="Email" s={12} />
-                                        <Input value="" name="password"   onChange={this.onInputChanged}type="Password" label="Password" s={12} />
-                                      </Row>
-                                <div>
-                                <Button  id="Loginbtn" waves='teal'>Register</Button>
-                                </div>
-                                <br />
-                                <div className=" log_in">
-                                  <Link to="/login" className="act">Login</Link>
-                                </div>
 
-                              </form>
+                      <div className="charis navbar">Charis</div>
+                      <div className="slist">Shopping List</div>
+
+                          <div className="register-div row">
+                              <div className=" log_title">
+                               Register
+                              </div>
+                                <form className=" login_form col s12" onSubmit={this.onRegisterClick}>
+                                        <div className="row">
+                                              <div className="input-field col s12">
+                                                <i className="material-icons prefix">account_circle</i>
+                                                <input name="name" id="icon_name" onChange={this.onInputChanged} type="text" className="validate"/>
+                                                <label for="icon_account_circle">Name</label>
+                                              </div>
+                                          </div>
+                                          <div className="row">
+                                                <div className="input-field col s12">
+                                                  <i className="material-icons prefix">email</i>
+                                                  <input name="email" id="icon_email" onChange={this.onInputChanged} type="email" className="validate"/>
+                                                  <label for="icon_telephone">Email</label>
+                                                </div>
+                                            </div>
+                                            <div className="row">
+                                                <div className="input-field col s12">
+                                                  <i className="material-icons prefix">lock</i>
+                                                  <input name="password" onChange={this.onInputChanged} id="icon_create" type="password" className="validate"/>
+                                                  <label for="icon_prefix">Password</label>
+                                                </div>
+                                            </div>
+
+                                            <button className="send  btn waves-effect waves-light" type="submit" name="action">Submit
+                                              <i className="material-icons right">send</i>
+                                            </button>
+                                            <div className="link_register row">
+                                            <a class=" reg btn btn-outline-info" href="/login">Login</a>
+                                            </div>
+                                </form>
                           </div>
-                      </div>
                   </div>
-                  <Toast>
-                  <NotificationContainer/>
-                  </Toast>
+
+                <Toast className="grey"><NotificationContainer/></Toast>
+
 
               </div>
         );

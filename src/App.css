@@ -4,6 +4,35 @@
     background-size: 100%;
     padding-top: 0px;
 }
+.Login_container{
+  background-image: url(index_img.jpg);
+  height: 900px;
+  background-size: 100%;
+  padding-left: 400px;
+  opacity: 0.6px;
+}
+
+.dashboard_container{
+  background-image: url(shopping.jpg);
+  height: 900px;
+  background-size: 100%;
+  opacity: 0.6px;
+}
+
+
+.dashboard_footer{
+  height: 100px;
+  background-size: 100%;
+
+}
+
+.Register_container{
+  background-image: url(index_img.jpg);
+  height: 900px;
+  background-size: 100%;
+  padding-left: 400px;
+
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -25,7 +54,81 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.login-div{
+  width: 500px;
+  height: 400px;
+  background-color: rgba(74, 63, 3, 0.709);
+  border-radius: 5px;
+
+}
+.register-div{
+  width: 600px;
+  height: 500px;
+  background-color: rgba(74, 63, 3, 0.709);
+  border-radius: 5px;
+}
+.log_title{
+  background-color: #343a40;
+  font-size: 50px;
+  color: white;
+}
+
+.login_form{
+  margin-top: 40px;
+  color: white;
+}
+
+.link_register{
+  color: white;
+  margin-left: 150px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+.show{
+  height: 600px;
+  background-color: rgba(19, 18, 18, 0.3);
+}
+.send{
+  background-color: #343a40;
+}
+
+.reg{
+  background-color: rgba(19, 18, 18, 0.1);
+  border-color: white;
+  color: white;
+}
+.reg:hover {
+  background-color: #343a40;
+  border-color: white;
+}
+.charis{
+  font-size: 50px;
+}
+.slist{
+  font-size: 30px;
+}
+.add_list{
+  width: 350px;
+  height: auto;
+  color: grey;
+  margin-top: 0px;
+  margin-left: 80%;
+  padding-left: 10px;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 22px;
+}
+#liss{
+  width: 300px;
+  margin-left: 100px;
+}
+
+.items{
+  background-color: rgba(19, 18, 18, 0.3);
+  padding-left: 10px;
+  border-radius: 10px;
+}
+.thecard{
+  background-image: url(shopping.jpg);
+
 }
