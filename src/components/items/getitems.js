@@ -27,6 +27,7 @@ class GetItems extends Component {
   componentWillUnmount() {
         this._mounted = false;
 
+
   }
   onInputChanged = (event) => {
      this.setState({
@@ -34,8 +35,8 @@ class GetItems extends Component {
       });
     };
 
-  getItems = () => {
-          axios.get(`${baseURL}/shoppinglists/${this.props.id}/items`,
+  getItems = (event,id) => {
+          axios.get(`${baseURL}/shoppinglists/${this.props.match.params.id}/items`,
                 {headers: {"Authorization": localStorage.getItem("token")}})
                 .then((response)=>{
                   this.setState({
@@ -46,7 +47,7 @@ class GetItems extends Component {
                 })
                 .catch((error) => {
 
-                    NotificationManager.error(error.response.data.Error);
+
                 });
 
 };
@@ -87,11 +88,36 @@ editItems = (event,id) => {
           };
 
 
+
+
   render() {
     const {Items, loadedItems} = this.state;
 
     return (
       <div >
+      <div className="getitems_container">
+            <div className="dashboard_navbar navbar-fixed" >
+              <nav >
+                <div className="nav-wrapper">
+                <a href="/dashboard"><i className="material-icons left">home</i></a>
+                  <p className="brand-logo">Charis ShoppingList</p>
+                  <ul className="right hide-on-med-and-down">
+                  <li>
+                  <a href="/search"><i className="material-icons right">search</i></a>
+                  </li>
+                      <li>
+                        <input name="search" onChange={this.onInputChanged} type="text" placeholder="Search" />
+                      </li>
+
+                    <li><a href="/logout"><i className="material-icons right">assignment_returned</i></a></li>
+                    <li>
+                    <p>Log</p>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+
       {
         loadedItems
         ?
@@ -122,8 +148,8 @@ editItems = (event,id) => {
               ))
         :"Loading ...."
       }
-
-
+<a class=" btn-floating btn-large waves-effect waves-light green" href="/dashboard" role="button"><i className="material-icons">fast_rewind</i></a>
+</div>
       </div>
     );
   }

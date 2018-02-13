@@ -4,14 +4,17 @@
   "private": true,
   "dependencies": {
     "babel-standalone": "^6.26.0",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.0.0-alpha.6",
     "jquery": "^3.3.1",
     "lodash": "^4.17.4",
+    "material-grid": "^0.1.0",
     "material-ui": "^0.20.0",
     "materialize": "^1.0.0",
     "materialize-css": "^0.100.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-addons-transition-group": "^15.6.2",
     "react-axios": "^2.0.0",
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-carousel": "^2.2.2",
@@ -21,7 +24,8 @@
     "react-notifications": "^1.4.3",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.0",
-    "react-stormpath": "^2.0.1"
+    "react-stormpath": "^2.0.1",
+    "reactstrap": "^4.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -30,18 +30,11 @@ handleClose = () => this.setState({open: false});
     return (
       <div className="dashboard_container">
                       <div className="dashboard_navbar navbar-fixed" >
-                        <nav >
+                        <nav className="black" >
                           <div className="nav-wrapper">
                           <a href="/dashboard"><i className="material-icons left">home</i></a>
                             <p className="brand-logo">Charis ShoppingList</p>
                             <ul className="right hide-on-med-and-down">
-                            <li>
-                            <a href="/search"><i className="material-icons right">search</i></a>
-                            </li>
-                                <li>
-                                  <input name="search" onChange={this.onInputChanged} type="text" placeholder="Search" />
-                                </li>
-
                               <li><a href="/logout"><i className="material-icons right">assignment_returned</i></a></li>
                               <li>
                               <p>Log</p>
@@ -50,18 +43,16 @@ handleClose = () => this.setState({open: false});
                           </div>
                         </nav>
                     </div>
-
+<div className="show container-fluid">
                             <AddShoppinglist />
-                              <div className="show container-fluid">
+
                               <div className="col">
                               <GetShoppinglist />
                               </div>
                               </div>
 
 
-                  <div className="dashboard_footer">
 
-                  </div>
     </div>
     );
   }
