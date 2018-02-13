@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import { Toast} from 'react-materialize'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import '../../App.css';
 

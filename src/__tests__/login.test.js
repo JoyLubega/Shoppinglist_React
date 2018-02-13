@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount,shallow } from 'enzyme';
 import { StaticRouter } from 'react-router';
-import Login from './components/authentication/login.js';
+import Login from '../components/authentication/login.js';
 import renderer from 'react-test-renderer';
 
 const baseURL = "http://127.0.0.1:5000";

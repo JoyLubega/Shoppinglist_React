@@ -18,8 +18,6 @@ const Main = () => (
         <Route path='/register' component={Register} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/getitems/:id' component={GetItems} />
-
-
     </main>
 )
 
