@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import './App.css';
-import { Navbar,NavItem,Modal,Button, Toast ,Row, Input,Icon} from 'react-materialize'
+import {Modal,Button} from 'react-materialize'
 import axios from 'axios';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 const baseURL = "http://127.0.0.1:5000"
@@ -57,7 +57,7 @@ class AddShoppinglist extends Component {
 
 
   render() {
-    
+
     return (
       <div>
               <div>
@@ -73,14 +73,14 @@ class AddShoppinglist extends Component {
                               <div className="row">
                                     <div className="input-field col s12">
                                       <input name="name" id="first_name" value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
-                                      <label for="first_name">Shopping list Name</label>
+                                      <label>Shopping list Name</label>
                                     </div>
                               </div>
 
                                 <div className="row">
                                     <div className="input-field col s12">
                                       <input id="ds" value={this.state.desc} onChange={this.onInputChanged} name="desc" type="text" className="validate"/>
-                                      <label for="ds">Description</label>
+                                      <label >Description</label>
                                     </div>
                               </div>
                               <Button className="red" waves='light'>Save</Button>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {withRouter} from "react-router-dom";
-import { Navbar,NavItem,Modal,Button, Toast ,Row, Input,Icon} from 'react-materialize'
+import { Modal,Button, Toast} from 'react-materialize'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import {NotificationContainer, NotificationManager} from 'react-notifications';
-import GetItems from '../items/getitems.js';
+
 
 
 
@@ -166,7 +166,6 @@ class GetShoppinglist extends Component {
                 // Logic for displaying todos
                 const indexOfLastlist = currentPage * listsPerPage;
                 const indexOfFirstlist = indexOfLastlist -listsPerPage;
-                const number = shoppingLists.length
                 const currentshoppinglists = shoppingLists.slice(indexOfFirstlist, indexOfLastlist);
 
 
@@ -228,7 +227,7 @@ class GetShoppinglist extends Component {
                                                                       <div className="input-field col s12">
                                                                         <input name="name" id="name" value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
                                                                         <input name="desc" id="desc" value={this.state.desc} onChange={this.onInputChanged} type="text" className="validate"/>
-                                                                        <label for="name">New shopping list name:</label>
+                                                                        <label>New shopping list name:</label>
                                                                       </div>
                                                                     </div>
                                                                     <Button className="red" waves='light'>Save</Button>
@@ -245,7 +244,7 @@ class GetShoppinglist extends Component {
                                                                     <div className="row">
                                                                       <div className="input-field col s12">
                                                                         <input name="name"  value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
-                                                                        <label for="first_name">Item Name</label>
+                                                                        <label>Item Name</label>
                                                                       </div>
 
 

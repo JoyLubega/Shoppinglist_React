@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Login Displays Login 1`] = `
+<div
+  className=" Login_container container-fluid text-center "
+>
+  <div
+    className="col-md-4 col-md-offset-4 col-sm-9 auth-box"
+  >
+    <div
+      className="charis navbar"
+    >
+      Charis
+    </div>
+    <div
+      className="slist"
+    >
+      Shopping List
+    </div>
+    <div
+      className="login-div row"
+    >
+      <div
+        className=" log_title"
+      >
+        Login
+      </div>
+      <form
+        className=" login_form col s12"
+        onSubmit={[Function]}
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="input-field col s12"
+          >
+            <i
+              className="material-icons prefix"
+            >
+              email
+            </i>
+            <input
+              className="validate"
+              id="email"
+              name="email"
+              onChange={[Function]}
+              type="email"
+            />
+            <label>
+              Email
+            </label>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="input-field col s12"
+          >
+            <i
+              className="material-icons prefix"
+            >
+              lock
+            </i>
+            <input
+              className="validate"
+              id="password"
+              name="password"
+              onChange={[Function]}
+              type="password"
+            />
+            <label>
+              Password
+            </label>
+          </div>
+        </div>
+        <button
+          className="send  btn waves-effect waves-light"
+          name="action"
+          type="submit"
+        >
+          Submit
+          <i
+            className="material-icons right"
+          >
+            send
+          </i>
+        </button>
+        <div
+          className="link_register row"
+        >
+          <a
+            className=" reg btn btn-outline-info"
+            href="/register"
+          >
+            Register
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div />
+</div>
+`;

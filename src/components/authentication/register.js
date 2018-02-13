@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 //styles
 import 'bootstrap/dist/css/bootstrap.css';
-import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
-import { Button, Toast ,Row, Input,Icon} from 'react-materialize';
+import {Toast} from 'react-materialize';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import '../../App.css';
 const baseURL = "http://127.0.0.1:5000"

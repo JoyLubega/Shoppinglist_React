@@ -1,18 +1,10 @@
 import React, { Component } from 'react';
-import Drawer from 'material-ui/Drawer';
-import RaisedButton from 'material-ui/RaisedButton';
-import MenuItem from 'material-ui/MenuItem';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import { Navbar,NavItem,Modal,Button, Toast ,Row, Input,Icon} from 'react-materialize'
+
+
+
 import 'bootstrap/dist/css/bootstrap.css';
 
-
 import './App.css';
-import  Main from  './main.js';
-import Search from './search.js';
-import Login from './components/authentication/login.js';
-import Logout from './components/authentication/logout.js';
-import Register from './components/authentication/register.js';
 import AddShoppinglist from './components/shoppinglists/addshoppinglists.js';
 import GetShoppinglist from './components/shoppinglists/getshoppinglists.js';
 
@@ -43,7 +35,7 @@ handleClose = () => this.setState({open: false});
                           </div>
                         </nav>
                     </div>
-<div className="show container-fluid">
+                    <div className="show container-fluid">
                             <AddShoppinglist />
 
                               <div className="col">
