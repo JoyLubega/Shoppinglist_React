@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-standalone": "^6.26.0",
     "bootstrap": "^4.0.0-alpha.6",
     "jquery": "^3.3.1",
@@ -24,6 +25,7 @@
     "react-materialize": "^1.1.2",
     "react-notifications": "^1.4.3",
     "react-router-dom": "^4.2.2",
+    "react-router-link": "^2.0.2",
     "react-scripts": "^1.1.0",
     "react-stormpath": "^2.0.1",
     "react-toastify": "^3.3.2",

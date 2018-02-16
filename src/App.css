@@ -125,7 +125,8 @@
   background-image: url(shopping_items.jpeg);
   height: 900px;
   background-size: 100%;
-  opacity: 0.6px;
+  padding-left: 100px;
+  padding-top: 100px;
 
 }
 
@@ -133,6 +134,8 @@
   background-color: rgba(19, 18, 18, 0.3);
   padding-left: 10px;
   border-radius: 10px;
+  width:300px;
+  
 }
 .thecard{
     background-color:rgba(70, 12, 1, 0.964);

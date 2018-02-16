@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import {withRouter} from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 import { Modal,Button, Toast} from 'react-materialize'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
+import AddShoppinglist from './addshoppinglists.js';
+import { Link } from 'react-router-link'
 
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 
@@ -14,25 +17,27 @@ const baseURL = "http://127.0.0.1:5000"
 
 
 
-class GetShoppinglist extends Component {
+export class GetShoppinglist extends Component {
   constructor(props) {
       super(props);
       this.state = {
-          loggedIn: localStorage.getItem('token'),
           shoppingLists:[],
           Items:[],
           name: '',
+          desc: '',
           email: '',
           password: '',
           item:"",
-          todos: [],
           currentPage: 1,
           listsPerPage:4,
           limit:''
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-
+  handleChange(event) {
+     this.setState({name: event.target.value});
+   }
 
   componentWillMount() {
         this._mounted = true;
@@ -44,7 +49,7 @@ class GetShoppinglist extends Component {
     }
 
     onInputChanged = (event) => {
-       this.setState({
+      this.setState({
       [event.target.name]: event.target.value
         });
       };
@@ -56,31 +61,27 @@ class GetShoppinglist extends Component {
               .then((response)=>{
                 this.setState({
                   shoppingLists: response.data.shoppinglists,
-                  success: true,
-                    found: true,
-                    errmessage: "",
-                    activePage: response.data.current,
-                    totalItems: response.data.Total,
-                    itemsPerPage: response.data.items,
-                    nextPage: response.data.next,
-                    previousPage: response.data.prev,
-                    limit: response.data.per_page
+
                 });
 
               })
               .catch((error) => {
 
-                  NotificationManager.error(error.response.data.message);
+                  toast.error(error.response.data.message)
               });
         };
 
       getShoppingLists = (event)=>{
+
         axios.get(`${baseURL}/shoppinglists/`
             ,{headers: {"Authorization": localStorage.getItem("token")}})
             .then((response)=>
                   {this.setState({shoppingLists: response.data})
 
                 })
+            .catch(error=>{
+
+            })
         };
 
           onHandleEditShoppinglist = (event,id) => {
@@ -96,7 +97,7 @@ class GetShoppinglist extends Component {
                       })
                       .catch((error) => {
 
-                          NotificationManager.error(error.response.data.Error);
+                          toast.error(error.response.data.Error)
                       });
 
                   };
@@ -113,7 +114,7 @@ class GetShoppinglist extends Component {
             .then(() => {window.location.reload();})
             .catch((error) => {
 
-                NotificationManager.error(error.response.data.Error);
+                toast.error(error.response.data.Error)
             });
 
         };
@@ -130,7 +131,7 @@ class GetShoppinglist extends Component {
                   })
                   .catch((error) => {
 
-                      NotificationManager.error(error.response.data.Error);
+                      toast.error(error.response.data.Error)
                   });
 
             };
@@ -156,17 +157,17 @@ class GetShoppinglist extends Component {
             }
 
               MovetoItems(event,id){
-
                 this.props.history.push(`/getitems/`+id);
               }
 
     render() {
                 const {shoppingLists, currentPage, listsPerPage } = this.state;
 
-                // Logic for displaying todos
+                // Logic for displaying shoppinglists
                 const indexOfLastlist = currentPage * listsPerPage;
                 const indexOfFirstlist = indexOfLastlist -listsPerPage;
                 const currentshoppinglists = shoppingLists.slice(indexOfFirstlist, indexOfLastlist);
+
 
 
                 // Logic for displaying page numbers
@@ -195,12 +196,13 @@ class GetShoppinglist extends Component {
 
             return (
                 <div>
+                <AddShoppinglist/>
 
                 {search}
 
-                <Toast value="name"><NotificationContainer/></Toast>
+                <ToastContainer/>
 
-<br/>
+                  <br/>
 
 
                 {
@@ -217,16 +219,16 @@ class GetShoppinglist extends Component {
                                                   <button className="btn btn-outline-info red"  onClick={(event)=>this.onHandleDeleteShoppinglist(event,list.id)}><i className="material-icons">delete</i></button>
                                                   <Button className=" btn btn-outline-info " onClick={(event)=>this.MovetoItems(event,list.id)} ><i className="material-icons">visibility</i></Button>
 
-                                                  <Modal
-                                                        header='Edit Shoppinglist'
-                                                        trigger={<Button className="btn btn-outline-info waves-light " ><i className="material-icons">edit</i></Button>}>
 
+                                                  <Modal
+                                                        trigger={<Button className="btn btn-outline-info waves-light " ><i className="material-icons">edit</i></Button>}>
+                                                        Edit shoppinglist<h3> {list.name}</h3>
                                                           <div className="row">
                                                                   <form className="col s12" onSubmit={(event)=>this.onHandleEditShoppinglist(event,list.id)} >
                                                                     <div className="row">
                                                                       <div className="input-field col s12">
-                                                                        <input name="name" id="name" value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
-                                                                        <input name="desc" id="desc" value={this.state.desc} onChange={this.onInputChanged} type="text" className="validate"/>
+                                                                        <input name="name" id="name" defaultValue={list.name} onChange={this.onInputChanged} type="text" className="validate"/>
+                                                                        <input name="desc" id="desc" defaultValue={list.desc} onChange={this.onInputChanged} type="text" className="validate"/>
                                                                         <label>New shopping list name:</label>
                                                                       </div>
                                                                     </div>
@@ -236,10 +238,10 @@ class GetShoppinglist extends Component {
                                                         </Modal>
 
                                                         <Modal
-                                                        header='Add Item to Shoppinglist'
-                                                        trigger={<Button className="btn btn-outline-info waves-light "  onClick={this.toggle}><i className="material-icons">add</i></Button>}>
-
+                                                        trigger={<Button className="btn btn-outline-info waves-light " id="additem" ><i className="material-icons">add</i></Button>}>
+                                                          Add items to<h3> {list.name}</h3>
                                                           <div className="row">
+
                                                                   <form className="col s12" onSubmit={(event)=>this.onHandleAddItem(event,list.id)} >
                                                                     <div className="row">
                                                                       <div className="input-field col s12">
@@ -264,6 +266,7 @@ class GetShoppinglist extends Component {
                                       </div>
                   })
                 }
+
                         <div className="footer  ">
                           <nav aria-label="" className="fixed-bottom black">
                             <ul className="pager text-center">
@@ -271,11 +274,14 @@ class GetShoppinglist extends Component {
                             </ul>
                           </nav>
 
-                    </div>
+               </div>
         </div>
   );
 
 }
+
+
+
 }
 
 

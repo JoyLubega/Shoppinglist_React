@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-
-
-
 import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
@@ -15,9 +12,6 @@ class Dashboard extends Component {
   }
 handleToggle = () => this.setState({open: !this.state.open});
 handleClose = () => this.setState({open: false});
-
-
-
   render() {
     return (
       <div className="dashboard_container">
@@ -36,7 +30,7 @@ handleClose = () => this.setState({open: false});
                         </nav>
                     </div>
                     <div className="show container-fluid">
-                            <AddShoppinglist />
+
 
                               <div className="col">
                               <GetShoppinglist />

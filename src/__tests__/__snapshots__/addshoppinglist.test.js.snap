@@ -1,0 +1,1401 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddShoppinglist /> component should render <AddShoppinglist /> component 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddShoppinglist />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div>
+        <div
+                className="add_list"
+        >
+                <p>
+                        Add Shopping List
+                </p>
+                <Modal
+                        actions={
+                                Array [
+                                        <Button
+                                          flat={true}
+                                          modal="close"
+                                          node="button"
+                                          waves="light"
+                                >
+                                          Close
+                                </Button>,
+                                      ]
+                        }
+                        bottomSheet={false}
+                        fixedFooter={false}
+                        header="Add Shopping List"
+                        modalOptions={Object {}}
+                        trigger={
+                                <button
+                                        className="btn-floating btn-large waves-effect waves-light red"
+                                >
+                                        <i
+                                                className="material-icons"
+                                        >
+                                                add_shopping_cart
+                                        </i>
+                                </button>
+                        }
+                >
+                        <div
+                                className="row"
+                        >
+                                <form
+                                        className="col s12"
+                                        onSubmit={[Function]}
+                                >
+                                        <div
+                                                className="row"
+                                        >
+                                                <div
+                                                        className="input-field col s12"
+                                                >
+                                                        <input
+                                                                className="validate"
+                                                                id="name"
+                                                                name="name"
+                                                                onChange={[Function]}
+                                                                type="text"
+                                                                value={undefined}
+                                                        />
+                                                        <label>
+                                                                Shopping list Name
+                                                        </label>
+                                                </div>
+                                        </div>
+                                        <div
+                                                className="row"
+                                        >
+                                                <div
+                                                        className="input-field col s12"
+                                                >
+                                                        <input
+                                                                className="validate"
+                                                                id="desc"
+                                                                name="desc"
+                                                                onChange={[Function]}
+                                                                type="text"
+                                                                value={undefined}
+                                                        />
+                                                        <label>
+                                                                Description
+                                                        </label>
+                                                </div>
+                                        </div>
+                                        <Button
+                                                className="red"
+                                                node="button"
+                                                waves="light"
+                                        >
+                                                Save
+                                        </Button>
+                                </form>
+                        </div>
+                </Modal>
+        </div>
+</div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="add_list"
+>
+          <p>
+                    Add Shopping List
+          </p>
+          <Modal
+                    actions={
+                              Array [
+                                        <Button
+                                          flat={true}
+                                          modal="close"
+                                          node="button"
+                                          waves="light"
+                              >
+                                          Close
+                              </Button>,
+                                      ]
+                    }
+                    bottomSheet={false}
+                    fixedFooter={false}
+                    header="Add Shopping List"
+                    modalOptions={Object {}}
+                    trigger={
+                              <button
+                                        className="btn-floating btn-large waves-effect waves-light red"
+                              >
+                                        <i
+                                                  className="material-icons"
+                                        >
+                                                  add_shopping_cart
+                                        </i>
+                              </button>
+                    }
+          >
+                    <div
+                              className="row"
+                    >
+                              <form
+                                        className="col s12"
+                                        onSubmit={[Function]}
+                              >
+                                        <div
+                                                  className="row"
+                                        >
+                                                  <div
+                                                            className="input-field col s12"
+                                                  >
+                                                            <input
+                                                                      className="validate"
+                                                                      id="name"
+                                                                      name="name"
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                                      value={undefined}
+                                                            />
+                                                            <label>
+                                                                      Shopping list Name
+                                                            </label>
+                                                  </div>
+                                        </div>
+                                        <div
+                                                  className="row"
+                                        >
+                                                  <div
+                                                            className="input-field col s12"
+                                                  >
+                                                            <input
+                                                                      className="validate"
+                                                                      id="desc"
+                                                                      name="desc"
+                                                                      onChange={[Function]}
+                                                                      type="text"
+                                                                      value={undefined}
+                                                            />
+                                                            <label>
+                                                                      Description
+                                                            </label>
+                                                  </div>
+                                        </div>
+                                        <Button
+                                                  className="red"
+                                                  node="button"
+                                                  waves="light"
+                                        >
+                                                  Save
+                                        </Button>
+                              </form>
+                    </div>
+          </Modal>
+</div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <p>
+              Add Shopping List
+</p>,
+            <Modal
+              actions={
+                            Array [
+                                          <Button
+                                            flat={true}
+                                            modal="close"
+                                            node="button"
+                                            waves="light"
+                            >
+                                            Close
+                            </Button>,
+                                        ]
+              }
+              bottomSheet={false}
+              fixedFooter={false}
+              header="Add Shopping List"
+              modalOptions={Object {}}
+              trigger={
+                            <button
+                                          className="btn-floating btn-large waves-effect waves-light red"
+                            >
+                                          <i
+                                                        className="material-icons"
+                                          >
+                                                        add_shopping_cart
+                                          </i>
+                            </button>
+              }
+>
+              <div
+                            className="row"
+              >
+                            <form
+                                          className="col s12"
+                                          onSubmit={[Function]}
+                            >
+                                          <div
+                                                        className="row"
+                                          >
+                                                        <div
+                                                                      className="input-field col s12"
+                                                        >
+                                                                      <input
+                                                                                    className="validate"
+                                                                                    id="name"
+                                                                                    name="name"
+                                                                                    onChange={[Function]}
+                                                                                    type="text"
+                                                                                    value={undefined}
+                                                                      />
+                                                                      <label>
+                                                                                    Shopping list Name
+                                                                      </label>
+                                                        </div>
+                                          </div>
+                                          <div
+                                                        className="row"
+                                          >
+                                                        <div
+                                                                      className="input-field col s12"
+                                                        >
+                                                                      <input
+                                                                                    className="validate"
+                                                                                    id="desc"
+                                                                                    name="desc"
+                                                                                    onChange={[Function]}
+                                                                                    type="text"
+                                                                                    value={undefined}
+                                                                      />
+                                                                      <label>
+                                                                                    Description
+                                                                      </label>
+                                                        </div>
+                                          </div>
+                                          <Button
+                                                        className="red"
+                                                        node="button"
+                                                        waves="light"
+                                          >
+                                                        Save
+                                          </Button>
+                            </form>
+              </div>
+</Modal>,
+          ],
+          "className": "add_list",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Add Shopping List",
+            },
+            "ref": null,
+            "rendered": "Add Shopping List",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "actions": Array [
+                <Button
+                  flat={true}
+                  modal="close"
+                  node="button"
+                  waves="light"
+>
+                  Close
+</Button>,
+              ],
+              "bottomSheet": false,
+              "children": <div
+                className="row"
+>
+                <form
+                                className="col s12"
+                                onSubmit={[Function]}
+                >
+                                <div
+                                                className="row"
+                                >
+                                                <div
+                                                                className="input-field col s12"
+                                                >
+                                                                <input
+                                                                                className="validate"
+                                                                                id="name"
+                                                                                name="name"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value={undefined}
+                                                                />
+                                                                <label>
+                                                                                Shopping list Name
+                                                                </label>
+                                                </div>
+                                </div>
+                                <div
+                                                className="row"
+                                >
+                                                <div
+                                                                className="input-field col s12"
+                                                >
+                                                                <input
+                                                                                className="validate"
+                                                                                id="desc"
+                                                                                name="desc"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value={undefined}
+                                                                />
+                                                                <label>
+                                                                                Description
+                                                                </label>
+                                                </div>
+                                </div>
+                                <Button
+                                                className="red"
+                                                node="button"
+                                                waves="light"
+                                >
+                                                Save
+                                </Button>
+                </form>
+</div>,
+              "fixedFooter": false,
+              "header": "Add Shopping List",
+              "modalOptions": Object {},
+              "trigger": <button
+                className="btn-floating btn-large waves-effect waves-light red"
+>
+                <i
+                                className="material-icons"
+                >
+                                add_shopping_cart
+                </i>
+</button>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <form
+                  className="col s12"
+                  onSubmit={[Function]}
+>
+                  <div
+                                    className="row"
+                  >
+                                    <div
+                                                      className="input-field col s12"
+                                    >
+                                                      <input
+                                                                        className="validate"
+                                                                        id="name"
+                                                                        name="name"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value={undefined}
+                                                      />
+                                                      <label>
+                                                                        Shopping list Name
+                                                      </label>
+                                    </div>
+                  </div>
+                  <div
+                                    className="row"
+                  >
+                                    <div
+                                                      className="input-field col s12"
+                                    >
+                                                      <input
+                                                                        className="validate"
+                                                                        id="desc"
+                                                                        name="desc"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value={undefined}
+                                                      />
+                                                      <label>
+                                                                        Description
+                                                      </label>
+                                    </div>
+                  </div>
+                  <Button
+                                    className="red"
+                                    node="button"
+                                    waves="light"
+                  >
+                                    Save
+                  </Button>
+</form>,
+                "className": "row",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="row"
+>
+                      <div
+                                            className="input-field col s12"
+                      >
+                                            <input
+                                                                  className="validate"
+                                                                  id="name"
+                                                                  name="name"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                                                  value={undefined}
+                                            />
+                                            <label>
+                                                                  Shopping list Name
+                                            </label>
+                      </div>
+</div>,
+                    <div
+                      className="row"
+>
+                      <div
+                                            className="input-field col s12"
+                      >
+                                            <input
+                                                                  className="validate"
+                                                                  id="desc"
+                                                                  name="desc"
+                                                                  onChange={[Function]}
+                                                                  type="text"
+                                                                  value={undefined}
+                                            />
+                                            <label>
+                                                                  Description
+                                            </label>
+                      </div>
+</div>,
+                    <Button
+                      className="red"
+                      node="button"
+                      waves="light"
+>
+                      Save
+</Button>,
+                  ],
+                  "className": "col s12",
+                  "onSubmit": [Function],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <div
+                        className="input-field col s12"
+>
+                        <input
+                                                className="validate"
+                                                id="name"
+                                                name="name"
+                                                onChange={[Function]}
+                                                type="text"
+                                                value={undefined}
+                        />
+                        <label>
+                                                Shopping list Name
+                        </label>
+</div>,
+                      "className": "row",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <input
+                            className="validate"
+                            id="name"
+                            name="name"
+                            onChange={[Function]}
+                            type="text"
+                            value={undefined}
+/>,
+                          <label>
+                            Shopping list Name
+</label>,
+                        ],
+                        "className": "input-field col s12",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "validate",
+                            "id": "name",
+                            "name": "name",
+                            "onChange": [Function],
+                            "type": "text",
+                            "value": undefined,
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Shopping list Name",
+                          },
+                          "ref": null,
+                          "rendered": "Shopping list Name",
+                          "type": "label",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <div
+                        className="input-field col s12"
+>
+                        <input
+                                                className="validate"
+                                                id="desc"
+                                                name="desc"
+                                                onChange={[Function]}
+                                                type="text"
+                                                value={undefined}
+                        />
+                        <label>
+                                                Description
+                        </label>
+</div>,
+                      "className": "row",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <input
+                            className="validate"
+                            id="desc"
+                            name="desc"
+                            onChange={[Function]}
+                            type="text"
+                            value={undefined}
+/>,
+                          <label>
+                            Description
+</label>,
+                        ],
+                        "className": "input-field col s12",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "validate",
+                            "id": "desc",
+                            "name": "desc",
+                            "onChange": [Function],
+                            "type": "text",
+                            "value": undefined,
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "Description",
+                          },
+                          "ref": null,
+                          "rendered": "Description",
+                          "type": "label",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Save",
+                      "className": "red",
+                      "node": "button",
+                      "waves": "light",
+                    },
+                    "ref": null,
+                    "rendered": "Save",
+                    "type": [Function],
+                  },
+                ],
+                "type": "form",
+              },
+              "type": "div",
+            },
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div>
+          <div
+                    className="add_list"
+          >
+                    <p>
+                              Add Shopping List
+                    </p>
+                    <Modal
+                              actions={
+                                        Array [
+                                                  <Button
+                                                    flat={true}
+                                                    modal="close"
+                                                    node="button"
+                                                    waves="light"
+                                        >
+                                                    Close
+                                        </Button>,
+                                                ]
+                              }
+                              bottomSheet={false}
+                              fixedFooter={false}
+                              header="Add Shopping List"
+                              modalOptions={Object {}}
+                              trigger={
+                                        <button
+                                                  className="btn-floating btn-large waves-effect waves-light red"
+                                        >
+                                                  <i
+                                                            className="material-icons"
+                                                  >
+                                                            add_shopping_cart
+                                                  </i>
+                                        </button>
+                              }
+                    >
+                              <div
+                                        className="row"
+                              >
+                                        <form
+                                                  className="col s12"
+                                                  onSubmit={[Function]}
+                                        >
+                                                  <div
+                                                            className="row"
+                                                  >
+                                                            <div
+                                                                      className="input-field col s12"
+                                                            >
+                                                                      <input
+                                                                                className="validate"
+                                                                                id="name"
+                                                                                name="name"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value={undefined}
+                                                                      />
+                                                                      <label>
+                                                                                Shopping list Name
+                                                                      </label>
+                                                            </div>
+                                                  </div>
+                                                  <div
+                                                            className="row"
+                                                  >
+                                                            <div
+                                                                      className="input-field col s12"
+                                                            >
+                                                                      <input
+                                                                                className="validate"
+                                                                                id="desc"
+                                                                                name="desc"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value={undefined}
+                                                                      />
+                                                                      <label>
+                                                                                Description
+                                                                      </label>
+                                                            </div>
+                                                  </div>
+                                                  <Button
+                                                            className="red"
+                                                            node="button"
+                                                            waves="light"
+                                                  >
+                                                            Save
+                                                  </Button>
+                                        </form>
+                              </div>
+                    </Modal>
+          </div>
+</div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="add_list"
+>
+            <p>
+                        Add Shopping List
+            </p>
+            <Modal
+                        actions={
+                                    Array [
+                                                <Button
+                                                  flat={true}
+                                                  modal="close"
+                                                  node="button"
+                                                  waves="light"
+                                    >
+                                                  Close
+                                    </Button>,
+                                              ]
+                        }
+                        bottomSheet={false}
+                        fixedFooter={false}
+                        header="Add Shopping List"
+                        modalOptions={Object {}}
+                        trigger={
+                                    <button
+                                                className="btn-floating btn-large waves-effect waves-light red"
+                                    >
+                                                <i
+                                                            className="material-icons"
+                                                >
+                                                            add_shopping_cart
+                                                </i>
+                                    </button>
+                        }
+            >
+                        <div
+                                    className="row"
+                        >
+                                    <form
+                                                className="col s12"
+                                                onSubmit={[Function]}
+                                    >
+                                                <div
+                                                            className="row"
+                                                >
+                                                            <div
+                                                                        className="input-field col s12"
+                                                            >
+                                                                        <input
+                                                                                    className="validate"
+                                                                                    id="name"
+                                                                                    name="name"
+                                                                                    onChange={[Function]}
+                                                                                    type="text"
+                                                                                    value={undefined}
+                                                                        />
+                                                                        <label>
+                                                                                    Shopping list Name
+                                                                        </label>
+                                                            </div>
+                                                </div>
+                                                <div
+                                                            className="row"
+                                                >
+                                                            <div
+                                                                        className="input-field col s12"
+                                                            >
+                                                                        <input
+                                                                                    className="validate"
+                                                                                    id="desc"
+                                                                                    name="desc"
+                                                                                    onChange={[Function]}
+                                                                                    type="text"
+                                                                                    value={undefined}
+                                                                        />
+                                                                        <label>
+                                                                                    Description
+                                                                        </label>
+                                                            </div>
+                                                </div>
+                                                <Button
+                                                            className="red"
+                                                            node="button"
+                                                            waves="light"
+                                                >
+                                                            Save
+                                                </Button>
+                                    </form>
+                        </div>
+            </Modal>
+</div>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <p>
+                Add Shopping List
+</p>,
+              <Modal
+                actions={
+                                Array [
+                                                <Button
+                                                  flat={true}
+                                                  modal="close"
+                                                  node="button"
+                                                  waves="light"
+                                >
+                                                  Close
+                                </Button>,
+                                              ]
+                }
+                bottomSheet={false}
+                fixedFooter={false}
+                header="Add Shopping List"
+                modalOptions={Object {}}
+                trigger={
+                                <button
+                                                className="btn-floating btn-large waves-effect waves-light red"
+                                >
+                                                <i
+                                                                className="material-icons"
+                                                >
+                                                                add_shopping_cart
+                                                </i>
+                                </button>
+                }
+>
+                <div
+                                className="row"
+                >
+                                <form
+                                                className="col s12"
+                                                onSubmit={[Function]}
+                                >
+                                                <div
+                                                                className="row"
+                                                >
+                                                                <div
+                                                                                className="input-field col s12"
+                                                                >
+                                                                                <input
+                                                                                                className="validate"
+                                                                                                id="name"
+                                                                                                name="name"
+                                                                                                onChange={[Function]}
+                                                                                                type="text"
+                                                                                                value={undefined}
+                                                                                />
+                                                                                <label>
+                                                                                                Shopping list Name
+                                                                                </label>
+                                                                </div>
+                                                </div>
+                                                <div
+                                                                className="row"
+                                                >
+                                                                <div
+                                                                                className="input-field col s12"
+                                                                >
+                                                                                <input
+                                                                                                className="validate"
+                                                                                                id="desc"
+                                                                                                name="desc"
+                                                                                                onChange={[Function]}
+                                                                                                type="text"
+                                                                                                value={undefined}
+                                                                                />
+                                                                                <label>
+                                                                                                Description
+                                                                                </label>
+                                                                </div>
+                                                </div>
+                                                <Button
+                                                                className="red"
+                                                                node="button"
+                                                                waves="light"
+                                                >
+                                                                Save
+                                                </Button>
+                                </form>
+                </div>
+</Modal>,
+            ],
+            "className": "add_list",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Add Shopping List",
+              },
+              "ref": null,
+              "rendered": "Add Shopping List",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "actions": Array [
+                  <Button
+                    flat={true}
+                    modal="close"
+                    node="button"
+                    waves="light"
+>
+                    Close
+</Button>,
+                ],
+                "bottomSheet": false,
+                "children": <div
+                  className="row"
+>
+                  <form
+                                    className="col s12"
+                                    onSubmit={[Function]}
+                  >
+                                    <div
+                                                      className="row"
+                                    >
+                                                      <div
+                                                                        className="input-field col s12"
+                                                      >
+                                                                        <input
+                                                                                          className="validate"
+                                                                                          id="name"
+                                                                                          name="name"
+                                                                                          onChange={[Function]}
+                                                                                          type="text"
+                                                                                          value={undefined}
+                                                                        />
+                                                                        <label>
+                                                                                          Shopping list Name
+                                                                        </label>
+                                                      </div>
+                                    </div>
+                                    <div
+                                                      className="row"
+                                    >
+                                                      <div
+                                                                        className="input-field col s12"
+                                                      >
+                                                                        <input
+                                                                                          className="validate"
+                                                                                          id="desc"
+                                                                                          name="desc"
+                                                                                          onChange={[Function]}
+                                                                                          type="text"
+                                                                                          value={undefined}
+                                                                        />
+                                                                        <label>
+                                                                                          Description
+                                                                        </label>
+                                                      </div>
+                                    </div>
+                                    <Button
+                                                      className="red"
+                                                      node="button"
+                                                      waves="light"
+                                    >
+                                                      Save
+                                    </Button>
+                  </form>
+</div>,
+                "fixedFooter": false,
+                "header": "Add Shopping List",
+                "modalOptions": Object {},
+                "trigger": <button
+                  className="btn-floating btn-large waves-effect waves-light red"
+>
+                  <i
+                                    className="material-icons"
+                  >
+                                    add_shopping_cart
+                  </i>
+</button>,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <form
+                    className="col s12"
+                    onSubmit={[Function]}
+>
+                    <div
+                                        className="row"
+                    >
+                                        <div
+                                                            className="input-field col s12"
+                                        >
+                                                            <input
+                                                                                className="validate"
+                                                                                id="name"
+                                                                                name="name"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value={undefined}
+                                                            />
+                                                            <label>
+                                                                                Shopping list Name
+                                                            </label>
+                                        </div>
+                    </div>
+                    <div
+                                        className="row"
+                    >
+                                        <div
+                                                            className="input-field col s12"
+                                        >
+                                                            <input
+                                                                                className="validate"
+                                                                                id="desc"
+                                                                                name="desc"
+                                                                                onChange={[Function]}
+                                                                                type="text"
+                                                                                value={undefined}
+                                                            />
+                                                            <label>
+                                                                                Description
+                                                            </label>
+                                        </div>
+                    </div>
+                    <Button
+                                        className="red"
+                                        node="button"
+                                        waves="light"
+                    >
+                                        Save
+                    </Button>
+</form>,
+                  "className": "row",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="row"
+>
+                        <div
+                                                className="input-field col s12"
+                        >
+                                                <input
+                                                                        className="validate"
+                                                                        id="name"
+                                                                        name="name"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value={undefined}
+                                                />
+                                                <label>
+                                                                        Shopping list Name
+                                                </label>
+                        </div>
+</div>,
+                      <div
+                        className="row"
+>
+                        <div
+                                                className="input-field col s12"
+                        >
+                                                <input
+                                                                        className="validate"
+                                                                        id="desc"
+                                                                        name="desc"
+                                                                        onChange={[Function]}
+                                                                        type="text"
+                                                                        value={undefined}
+                                                />
+                                                <label>
+                                                                        Description
+                                                </label>
+                        </div>
+</div>,
+                      <Button
+                        className="red"
+                        node="button"
+                        waves="light"
+>
+                        Save
+</Button>,
+                    ],
+                    "className": "col s12",
+                    "onSubmit": [Function],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <div
+                          className="input-field col s12"
+>
+                          <input
+                                                    className="validate"
+                                                    id="name"
+                                                    name="name"
+                                                    onChange={[Function]}
+                                                    type="text"
+                                                    value={undefined}
+                          />
+                          <label>
+                                                    Shopping list Name
+                          </label>
+</div>,
+                        "className": "row",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <input
+                              className="validate"
+                              id="name"
+                              name="name"
+                              onChange={[Function]}
+                              type="text"
+                              value={undefined}
+/>,
+                            <label>
+                              Shopping list Name
+</label>,
+                          ],
+                          "className": "input-field col s12",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "validate",
+                              "id": "name",
+                              "name": "name",
+                              "onChange": [Function],
+                              "type": "text",
+                              "value": undefined,
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Shopping list Name",
+                            },
+                            "ref": null,
+                            "rendered": "Shopping list Name",
+                            "type": "label",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <div
+                          className="input-field col s12"
+>
+                          <input
+                                                    className="validate"
+                                                    id="desc"
+                                                    name="desc"
+                                                    onChange={[Function]}
+                                                    type="text"
+                                                    value={undefined}
+                          />
+                          <label>
+                                                    Description
+                          </label>
+</div>,
+                        "className": "row",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <input
+                              className="validate"
+                              id="desc"
+                              name="desc"
+                              onChange={[Function]}
+                              type="text"
+                              value={undefined}
+/>,
+                            <label>
+                              Description
+</label>,
+                          ],
+                          "className": "input-field col s12",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "validate",
+                              "id": "desc",
+                              "name": "desc",
+                              "onChange": [Function],
+                              "type": "text",
+                              "value": undefined,
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Description",
+                            },
+                            "ref": null,
+                            "rendered": "Description",
+                            "type": "label",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Save",
+                        "className": "red",
+                        "node": "button",
+                        "waves": "light",
+                      },
+                      "ref": null,
+                      "rendered": "Save",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "form",
+                },
+                "type": "div",
+              },
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

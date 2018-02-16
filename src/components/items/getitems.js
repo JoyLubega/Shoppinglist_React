@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import {Modal,Button} from 'react-materialize';
 
@@ -17,11 +18,19 @@ class GetItems extends Component {
         item:"",
         loadedItems: false,
       };
+      this.handleChange = this.handleChange.bind(this);
   }
+  handleChange(event) {
+     this.setState({name: event.target.value});
+   }
 
   componentDidMount() {
-        this._mounted = true;
-        this.getItems();
+        try{
+          this._mounted = true;
+          this.getItems(this.props.match.params.id);
+        }
+        catch (e){}
+
   }
 
   componentWillUnmount() {
@@ -35,8 +44,8 @@ class GetItems extends Component {
       });
     };
 
-  getItems = (event,id) => {
-          axios.get(`${baseURL}/shoppinglists/${this.props.match.params.id}/items`,
+  getItems = (id) => {
+          axios.get(`${baseURL}/shoppinglists/${id}/items`,
                 {headers: {"Authorization": localStorage.getItem("token")}})
                 .then((response)=>{
                   this.setState({
@@ -46,7 +55,7 @@ class GetItems extends Component {
 
                 })
                 .catch((error) => {
-
+                console.log('hello')
 
                 });
 
@@ -56,7 +65,7 @@ class GetItems extends Component {
 editItems = (event,id) => {
         event.preventDefault();
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
-        axios.put(`${baseURL}/shoppinglists/${this.props.id}/items/${id}`,{
+        axios.put(`${baseURL}/shoppinglists/${this.props.match.params.id}/items/${id}`,{
 
             item: this.state.name
         })
@@ -66,7 +75,7 @@ editItems = (event,id) => {
             })
             .catch((error) => {
 
-                NotificationManager.error(error.response.data.Error);
+                // NotificationManager.error(error.response.data.Error);
             });
 
         };
@@ -89,34 +98,14 @@ editItems = (event,id) => {
 
 
 
-
   render() {
     const {Items, loadedItems} = this.state;
 
     return (
-      <div >
+      <div>
       <div className="getitems_container">
-            <div className="dashboard_navbar navbar-fixed" >
-              <nav >
-                <div className="nav-wrapper">
-                <a href="/dashboard"><i className="material-icons left">home</i></a>
-                  <p className="brand-logo">Charis ShoppingList</p>
-                  <ul className="right hide-on-med-and-down">
-                  <li>
-                  <a href="/search"><i className="material-icons right">search</i></a>
-                  </li>
-                      <li>
-                        <input name="search" onChange={this.onInputChanged} type="text" placeholder="Search" />
-                      </li>
 
-                    <li><a href="/logout"><i className="material-icons right">assignment_returned</i></a></li>
-                    <li>
-                    <p>Log</p>
-                    </li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
+
 
       {
         loadedItems
@@ -127,15 +116,15 @@ editItems = (event,id) => {
               <p>
               Item Name:{item.name}
               <Modal
-                      header='Edit Item'
-                      trigger={<button className="btn-floating btn-small waves-effect waves-light blue"><i className="material-icons blue">edit</i></button>}>
 
+                      trigger={<button className="btn-floating btn-small waves-effect waves-light blue"><i className="material-icons blue">edit</i></button>}>
+                      Edit item:<h3> {item.name}</h3>
                       <div className="row">
                       <form className="col s12" onSubmit={(event)=>this.editItems(event,item.id)} >
                       <div className="row">
                       <div className="input-field col s12">
-                      <input name="name" value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
-                      <label for="name">New item name:</label>
+                      <input name="name" id="item" defaultValue={item.name} onChange={this.onInputChanged} type="text" className="validate"/>
+                      <label>New item name:</label>
                       </div>
                       </div>
                       <Button className="red" waves='light'>Save</Button>
@@ -148,7 +137,17 @@ editItems = (event,id) => {
               ))
         :"Loading ...."
       }
-<a class=" btn-floating btn-large waves-effect waves-light green" href="/dashboard" role="button"><i className="material-icons">fast_rewind</i></a>
+<a className=" btn-floating btn-large waves-effect waves-light green" href="/dashboard" role="button"><i className="material-icons">fast_rewind</i></a>
+</div>
+
+
+<div className="footer  ">
+  <nav aria-label="" className="fixed-bottom black">
+    <ul className="pager text-center">
+
+    </ul>
+  </nav>
+
 </div>
       </div>
     );

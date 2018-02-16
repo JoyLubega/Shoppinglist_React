@@ -11,24 +11,17 @@ class AddShoppinglist extends Component {
   constructor(props) {
       super(props);
       this.state = {
-          loggedIn: localStorage.getItem('token'),
+
           ShoppingList:[]
       };
   }
-
-
   componentDidMount() {
         this._mounted = true;
-
-
     }
 
     componentWillUnmount() {
         this._mounted = false;
     }
-
-
-
     onHandleAddshoppinglist = (event) => {
         event.preventDefault();
         axios.post(`${baseURL}/shoppinglists`,
@@ -39,16 +32,16 @@ class AddShoppinglist extends Component {
       },{headers: {"Authorization": localStorage.getItem("token")}})
       .then(() => {
          window.location.reload();
+         // this.props.getlists();
 
       })
       .catch((error) => {
+        
 
-          NotificationManager.error(error.response.data.Error);
+        //  NotificationManager.error(error.data.Error);
       });
 
 };
-
-
   onInputChanged = (event) => {
       this.setState({
           [event.target.name]: event.target.value
@@ -72,14 +65,14 @@ class AddShoppinglist extends Component {
                             <form className="col s12" onSubmit={this.onHandleAddshoppinglist}>
                               <div className="row">
                                     <div className="input-field col s12">
-                                      <input name="name" id="first_name" value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
+                                      <input name="name" id="name" value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
                                       <label>Shopping list Name</label>
                                     </div>
                               </div>
 
                                 <div className="row">
                                     <div className="input-field col s12">
-                                      <input id="ds" value={this.state.desc} onChange={this.onInputChanged} name="desc" type="text" className="validate"/>
+                                      <input id="desc" value={this.state.desc} onChange={this.onInputChanged} name="desc" type="text" className="validate"/>
                                       <label >Description</label>
                                     </div>
                               </div>

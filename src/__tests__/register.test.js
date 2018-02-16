@@ -45,7 +45,7 @@ describe('Component: Register', () => {
     expect(rendered.toJSON()).toMatchSnapshot();
   });
   it('should render form correctly', () => {
-        // check register component contain one <from/>
+        // check register component contains a <form/>
         const LoginForm = wrapper.find("form");
         expect(LoginForm).toHaveLength(1);
 
