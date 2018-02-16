@@ -1,6 +1,8 @@
 [![Namuli Joyce](https://img.shields.io/badge/Namuli%20Joyce-ShoppingListAPP-green.svg)]()
 [![Build Status](https://travis-ci.org/JoyLubega/Shoppinglist_React.svg?branch=ft-154692525-tests)](https://travis-ci.org/JoyLubega/Shoppinglist_React)
 
+[![Coverage Status](https://coveralls.io/repos/github/JoyLubega/Shoppinglist_React/badge.svg?branch=ft-154692525-tests?style=social)](https://coveralls.io/github/JoyLubega/Shoppinglist_React?branch=ft-154692525-tests)
+
 
 A shoppinglist app developed in react js that allows users to  create and take note of things they would want to buy.
 
