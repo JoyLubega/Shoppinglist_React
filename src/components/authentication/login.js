@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 //styles
 import 'bootstrap/dist/css/bootstrap.css';
-import {Link, Redirect} from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import { Button, Toast ,Row, Input,Icon} from 'react-materialize'
 import {NotificationContainer, NotificationManager} from 'react-notifications';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppBar from 'material-ui/AppBar';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
 import '../../App.css';
-import Search from '../../search.js';
-const baseURL = "http://127.0.0.1:5000"
+
+import {baseURL} from '../../config.js';
 
 class Login extends Component {
     constructor(props) {
@@ -60,7 +54,8 @@ class Login extends Component {
 
             }.bind(this))
             .catch(function (error) {
-                NotificationManager.error(error.response.data.Error);
+                // NotificationManager.error(error.response.data.Error);
+                toast.success(error.response.data.Error)
 
 
             });
@@ -83,15 +78,15 @@ class Login extends Component {
                                     <div className="row">
                                           <div className="input-field col s12">
                                             <i className="material-icons prefix">email</i>
-                                            <input name="email" id="icon_email" onChange={this.onInputChanged} type="email" className="validate"/>
-                                            <label for="icon_telephone">Email</label>
+                                            <input name="email" id="email" onChange={this.onInputChanged} type="email" className="validate"/>
+                                            <label>Email</label>
                                           </div>
                                       </div>
                                       <div className="row">
                                           <div className="input-field col s12">
                                             <i className="material-icons prefix">lock</i>
-                                            <input name="password" onChange={this.onInputChanged} id="icon_prefix" type="password" className="validate"/>
-                                            <label for="icon_prefix">Password</label>
+                                            <input name="password" onChange={this.onInputChanged} id="password" type="password" className="validate"/>
+                                            <label>Password</label>
                                           </div>
                                       </div>
 
@@ -99,14 +94,14 @@ class Login extends Component {
                                         <i className="material-icons right">send</i>
                                       </button>
                                       <div className="link_register row">
-                                      <a class=" reg btn btn-outline-info" href="/register">Register</a>
+                                      <a className=" reg btn btn-outline-info" href="/register">Register</a>
                                       </div>
                           </form>
                     </div>
             </div>
 
-            <Toast><NotificationContainer/></Toast>
 
+<ToastContainer/>
 
         </div>
 

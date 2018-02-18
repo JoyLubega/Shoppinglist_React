@@ -16,10 +16,13 @@
   background-image: url(shopping.jpg);
   height: 900px;
   background-size: 100%;
-  opacity: 0.6px;
+
+
 }
 
-
+.dashboard_navbar{
+  background-color: black;
+}
 .dashboard_footer{
   height: 100px;
   background-size: 100%;
@@ -85,8 +88,8 @@
   font-size: 18px;
 }
 .show{
-  height: 600px;
-  background-color: rgba(19, 18, 18, 0.3);
+  height: 900px;
+  background-color: rgba(179, 175, 175, 0.5);
 }
 .send{
   background-color: #343a40;
@@ -118,17 +121,27 @@
   text-align: center;
   font-size: 22px;
 }
-#liss{
-  width: 300px;
-  margin-left: 100px;
+.getitems_container{
+  background-image: url(shopping_items.jpeg);
+  height: 900px;
+  background-size: 100%;
+  padding-left: 100px;
+  padding-top: 100px;
+
 }
 
 .items{
   background-color: rgba(19, 18, 18, 0.3);
   padding-left: 10px;
   border-radius: 10px;
+  width:300px;
+  
 }
 .thecard{
-  background-image: url(shopping.jpg);
+    background-color:rgba(70, 12, 1, 0.964);
+    border-radius: 20px;
+    padding-left: 50px;
+    width: 300px
+
 
 }

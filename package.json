@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-standalone": "^6.26.0",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.0.0-alpha.6",
     "jquery": "^3.3.1",
     "lodash": "^4.17.4",
+    "material-grid": "^0.1.0",
     "material-ui": "^0.20.0",
     "materialize": "^1.0.0",
     "materialize-css": "^0.100.2",
+    "moxios": "^0.4.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-addons-transition-group": "^15.6.2",
     "react-axios": "^2.0.0",
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-carousel": "^2.2.2",
@@ -20,13 +25,23 @@
     "react-materialize": "^1.1.2",
     "react-notifications": "^1.4.3",
     "react-router-dom": "^4.2.2",
+    "react-router-link": "^2.0.2",
     "react-scripts": "^1.1.0",
-    "react-stormpath": "^2.0.1"
+    "react-stormpath": "^2.0.1",
+    "react-toastify": "^3.3.2",
+    "reactstrap": "^4.8.0",
+    "sinon": "^4.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.13.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-test-renderer": "^16.2.0"
   }
 }

@@ -1,42 +1,45 @@
 import React, { Component } from 'react';
-import { Navbar,NavItem,Modal,Button, Toast ,Row, Input,Icon} from 'react-materialize'
+import {withRouter} from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import { Modal,Button, Toast} from 'react-materialize'
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.css';
+import AddShoppinglist from './addshoppinglists.js';
+import { Link } from 'react-router-link'
+
 import {NotificationContainer, NotificationManager} from 'react-notifications';
-import GetItems from '../items/getitems.js';
+
+
+
 
 
 const baseURL = "http://127.0.0.1:5000"
 
 
 
-class GetShoppinglist extends Component {
+export class GetShoppinglist extends Component {
   constructor(props) {
       super(props);
       this.state = {
-          loggedIn: localStorage.getItem('token'),
           shoppingLists:[],
           Items:[],
           name: '',
+          desc: '',
           email: '',
           password: '',
           item:"",
-          success: false,
-            totalItems: '',
-            itemsPerPage: '',
-            activePage: '',
-            nextPage: '',
-            previousPage: '',
-            view_item: false,
-
-            found: true,
-            message:"",
-            errmessage: "",
-            limit:""
-      };
+          currentPage: 1,
+          listsPerPage:4,
+          limit:''
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
+  handleChange(event) {
+     this.setState({name: event.target.value});
+   }
 
-
-  componentDidMount() {
+  componentWillMount() {
         this._mounted = true;
         this.getShoppingLists()
     }
@@ -46,7 +49,7 @@ class GetShoppinglist extends Component {
     }
 
     onInputChanged = (event) => {
-       this.setState({
+      this.setState({
       [event.target.name]: event.target.value
         });
       };
@@ -57,30 +60,29 @@ class GetShoppinglist extends Component {
             ,{headers: {"Authorization": localStorage.getItem("token")}})
               .then((response)=>{
                 this.setState({
-                  shoppingLists: response.data.shoppinglists
+                  shoppingLists: response.data.shoppinglists,
+
                 });
 
               })
               .catch((error) => {
 
-                  NotificationManager.error(error.response.data.Error);
+                  toast.error(error.response.data.message)
               });
-
-
-
         };
 
       getShoppingLists = (event)=>{
-        axios.get(`${baseURL}/shoppinglists`
+
+        axios.get(`${baseURL}/shoppinglists/`
             ,{headers: {"Authorization": localStorage.getItem("token")}})
             .then((response)=>
-                  {this.setState({shoppingLists: response.data.shoppinglists})
+                  {this.setState({shoppingLists: response.data})
 
                 })
+            .catch(error=>{
 
-
+            })
         };
-
 
           onHandleEditShoppinglist = (event,id) => {
                   event.preventDefault();
@@ -95,12 +97,16 @@ class GetShoppinglist extends Component {
                       })
                       .catch((error) => {
 
-                          NotificationManager.error(error.response.data.Error);
+                          toast.error(error.response.data.Error)
                       });
 
                   };
 
-
+                  handleClick(event) {
+                    this.setState({
+                      currentPage: Number(event.target.id)
+                    });
+                  }
       onHandleDeleteShoppinglist = (event,id) => {
         event.preventDefault();
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
@@ -108,7 +114,7 @@ class GetShoppinglist extends Component {
             .then(() => {window.location.reload();})
             .catch((error) => {
 
-                NotificationManager.error(error.response.data.Error);
+                toast.error(error.response.data.Error)
             });
 
         };
@@ -125,7 +131,7 @@ class GetShoppinglist extends Component {
                   })
                   .catch((error) => {
 
-                      NotificationManager.error(error.response.data.Error);
+                      toast.error(error.response.data.Error)
                   });
 
             };
@@ -150,85 +156,133 @@ class GetShoppinglist extends Component {
 
             }
 
-
-
+              MovetoItems(event,id){
+                this.props.history.push(`/getitems/`+id);
+              }
 
     render() {
-      let search = <div className="input-group pull-right col-md-4">
-               <input type="email" onInput={this.onSearchInput} name="search" className="form-control" placeholder="search shopping list" />
-               <span className="btn-floating btn-small waves-effect waves-light grey"><i className="material-icons prefix" >search</i></span>
-               </div>;
-      return (
+                const {shoppingLists, currentPage, listsPerPage } = this.state;
+
+                // Logic for displaying shoppinglists
+                const indexOfLastlist = currentPage * listsPerPage;
+                const indexOfFirstlist = indexOfLastlist -listsPerPage;
+                const currentshoppinglists = shoppingLists.slice(indexOfFirstlist, indexOfLastlist);
+
+
+
+                // Logic for displaying page numbers
+                const pageNumbers = [];
+                for (let i = 1; i <= Math.ceil(shoppingLists.length / listsPerPage); i++) {
+                  pageNumbers.push(i);
+                }
+
+                const renderPageNumbers = pageNumbers.map(number => {
+                  return (
+                    <button className="btn-floating btn-small waves-effect waves-light blue "
+                      key={number}
+                      id={number}
+                      onClick={this.handleClick}
+                    >
+                      {number}
+                    </button>
+                  );
+                });
+
+
+                let search = <div className="input-group pull-right col-md-4">
+                     <input type="email" onInput={this.onSearchInput} name="search" className="form-control" placeholder="search shopping list" />
+                     <span className="btn-floating btn-small waves-effect waves-light grey"><i className="material-icons prefix" >search</i></span>
+                     </div>;
+
+            return (
                 <div>
+                <AddShoppinglist/>
+
                 {search}
-                <Toast value="name"><NotificationContainer/></Toast>
-                {this.state.shoppingLists.map((list,id) => {
 
-                return <div id="liss" key={id}>
-                <div className="row">
-                        <div className="col">
-                              <div className="card white thecard">
-                                      <div className="card-content black-text">
-                                        <span className="card-title"><h3>Shoppinglist</h3></span>
-                                        <p>Shoppinglist Name:{list.name}</p>
-                                        <p>Description:{list.desc}</p>
-                                        <hr />
-                                        <p><h5>Items</h5></p>
-                                        <GetItems id={list.id}/>
+                <ToastContainer/>
 
-                                      </div>
-                                      <div className="card-action">
+                  <br/>
 
-                                      <Button className=" red" onClick={(event)=>this.onHandleDeleteShoppinglist(event,list.id)}><i className="material-icons">delete</i></Button>
-                                              <Modal
-                                                    header='Edit Shoppinglist'
-                                                    trigger={<Button className="btn waves-light blue" ><i className="material-icons">edit</i></Button>}>
 
-                                                      <div className="row">
-                                                              <form className="col s12" onSubmit={(event)=>this.onHandleEditShoppinglist(event,list.id)} >
-                                                                <div className="row">
-                                                                  <div className="input-field col s12">
-                                                                    <input name="name" id="name" value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
-                                                                    <input name="desc" id="desc" value={this.state.desc} onChange={this.onInputChanged} type="text" className="validate"/>
-                                                                    <label for="name">New shopping list name:</label>
-                                                                  </div>
-                                                                </div>
-                                                                <Button className="red" waves='light'>Save</Button>
-                                                                </form>
+                {
+                  currentshoppinglists.map((list, id) => {
+                    return <div className="liss"  key={id}>
+                              <div className="col-sm-6 col-md-4">
+                                <div className="thumbnail">
+                                        <div className="thecard">
+                                              <div className="card-content white-text">
+                                                <span className="card-title"><h3>{list.name}</h3></span>
+                                                <p>Description:{list.desc}</p>
+                                              </div>
+                                          <div >
+                                                  <button className="btn btn-outline-info red"  onClick={(event)=>this.onHandleDeleteShoppinglist(event,list.id)}><i className="material-icons">delete</i></button>
+                                                  <Button className=" btn btn-outline-info " onClick={(event)=>this.MovetoItems(event,list.id)} ><i className="material-icons">visibility</i></Button>
+
+
+                                                  <Modal
+                                                        trigger={<Button className="btn btn-outline-info waves-light " ><i className="material-icons">edit</i></Button>}>
+                                                        Edit shoppinglist<h3> {list.name}</h3>
+                                                          <div className="row">
+                                                                  <form className="col s12" onSubmit={(event)=>this.onHandleEditShoppinglist(event,list.id)} >
+                                                                    <div className="row">
+                                                                      <div className="input-field col s12">
+                                                                        <input name="name" id="name" defaultValue={list.name} onChange={this.onInputChanged} type="text" className="validate"/>
+                                                                        <input name="desc" id="desc" defaultValue={list.desc} onChange={this.onInputChanged} type="text" className="validate"/>
+                                                                        <label>New shopping list name:</label>
+                                                                      </div>
+                                                                    </div>
+                                                                    <Button className="red" waves='light'>Save</Button>
+                                                                    </form>
+                                                            </div>
+                                                        </Modal>
+
+                                                        <Modal
+                                                        trigger={<Button className="btn btn-outline-info waves-light " id="additem" ><i className="material-icons">add</i></Button>}>
+                                                          Add items to<h3> {list.name}</h3>
+                                                          <div className="row">
+
+                                                                  <form className="col s12" onSubmit={(event)=>this.onHandleAddItem(event,list.id)} >
+                                                                    <div className="row">
+                                                                      <div className="input-field col s12">
+                                                                        <input name="name"  value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
+                                                                        <label>Item Name</label>
+                                                                      </div>
+
+
+                                                                    </div>
+                                                                    <Button className="red" waves='light'>Save</Button>
+                                                                    </form>
+                                                            </div>
+
+                                                            </Modal>
                                                         </div>
-                                                    </Modal>
-
-                                                <Modal
-                                                    header='Add Item to Shoppinglist'
-                                                    trigger={<Button className="btn waves-light green"  onClick={this.toggle}><i className="material-icons">add</i></Button>}>
-
-                                                      <div className="row">
-                                                              <form className="col s12" onSubmit={(event)=>this.onHandleAddItem(event,list.id)} >
-                                                                <div className="row">
-                                                                  <div className="input-field col s12">
-                                                                    <input name="name"  value={this.state.name} onChange={this.onInputChanged} type="text" className="validate"/>
-                                                                    <label for="first_name">Item Name</label>
-                                                                  </div>
-
-
-                                                                </div>
-                                                                <Button className="red" waves='light'>Save</Button>
-                                                                </form>
+                                                        <br />
                                                         </div>
+                                                      <br />
 
-                                              </Modal>
+                                                  </div>
+                                            </div>
                                       </div>
-                              </div>
-                        </div>
-                  </div>
-            </div>
-          })}
+                  })
+                }
 
+                        <div className="footer  ">
+                          <nav aria-label="" className="fixed-bottom black">
+                            <ul className="pager text-center">
+                              {renderPageNumbers}
+                            </ul>
+                          </nav>
+
+               </div>
         </div>
   );
 
 }
+
+
+
 }
 
 
-export default GetShoppinglist;
+export default withRouter(GetShoppinglist);
