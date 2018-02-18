@@ -30,7 +30,6 @@ describe('GetShoppinglist ', () => {
     const wrapper = shallow(<GetShoppinglist />);
     it('should render <GetShoppinglist /> component', () => {
         const wrapper = shallow(<GetShoppinglist />)
-        // console.log(wrapper.props().children);
         expect(wrapper.length).toEqual(1)
     });
     it('calls componentWillMount', () => {
