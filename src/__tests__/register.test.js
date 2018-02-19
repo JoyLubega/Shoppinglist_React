@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer';
 import moxios from 'moxios';
 import sinon from 'sinon';
 
-const baseURL = "http://127.0.0.1:5000";
+import {baseURL} from '../config.js';
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
 

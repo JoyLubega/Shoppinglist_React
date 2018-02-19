@@ -4,7 +4,7 @@ import {GetShoppinglist}  from '../components/shoppinglists/getshoppinglists.js'
 import AddShoppinglist from '../components/shoppinglists/addshoppinglists.js';
 import sinon from 'sinon';
 jest.mock('react-notifications');
-const baseURL = "http://127.0.0.1:5000";
+import {baseURL} from '../config.js';
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
 

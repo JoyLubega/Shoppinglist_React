@@ -42,6 +42,7 @@ class Register extends Component {
                 }
             }.bind(this))
             .catch(function (error) {
+
                 toast.error(error.response.data.Error)
             });
     };

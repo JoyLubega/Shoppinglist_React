@@ -3,7 +3,7 @@ import { shallow, mount, render } from 'enzyme';
 import AddShoppinglist from '../components/shoppinglists/addshoppinglists.js';
 
 jest.mock('react-notifications');
-const baseURL = "http://127.0.0.1:5000";
+import {baseURL} from '../config.js';
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
 
