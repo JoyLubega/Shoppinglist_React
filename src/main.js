@@ -9,17 +9,13 @@ import Dashboard from './dashboard.js';
 
 
 const Main = () => (
-    <main role="main">
-
-        {/* Handle all the routes that are in the application*/}
         <Switch>
-        <Route path='/login' component={Login} />
-        <Route path='/logout' component={Logout} />
-        <Route path='/register' component={Register} />
-        <Route path='/dashboard' component={Dashboard} />
-        <Route path='/getitems/:id' component={GetItems} />
+          <Route path='/login' component={Login} />
+          <Route path='/logout' component={Logout} />
+          <Route path='/register' component={Register} />
+          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/getitems/:id' component={GetItems} />
         </Switch>
-    </main>
 )
 
 export default Main;
