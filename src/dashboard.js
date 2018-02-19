@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
-import AddShoppinglist from './components/shoppinglists/addshoppinglists.js';
 import GetShoppinglist from './components/shoppinglists/getshoppinglists.js';
 
 class Dashboard extends Component {

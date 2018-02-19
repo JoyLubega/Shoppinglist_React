@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import {withRouter} from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-import { Modal,Button, Toast} from 'react-materialize'
+import { Modal,Button} from 'react-materialize'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 import AddShoppinglist from './addshoppinglists.js';
-import { Link } from 'react-router-link'
 
-import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 
 
 

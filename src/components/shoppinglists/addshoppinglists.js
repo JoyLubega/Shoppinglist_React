@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import './App.css';
 import {Modal,Button} from 'react-materialize'
 import axios from 'axios';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
 import {baseURL} from '../../config.js';
 
 

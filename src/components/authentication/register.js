@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-import {NotificationContainer, NotificationManager} from 'react-notifications';
 import '../../App.css';
 import {baseURL} from '../../config.js';
 
