@@ -13,7 +13,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 
 
 
-const baseURL = "http://127.0.0.1:5000"
+import {baseURL} from '../../config.js';
 
 
 

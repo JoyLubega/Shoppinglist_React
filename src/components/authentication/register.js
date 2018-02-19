@@ -5,7 +5,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import '../../App.css';
-const baseURL = "http://127.0.0.1:5000"
+import {baseURL} from '../../config.js';
 
 class Register extends Component {
     constructor(props) {

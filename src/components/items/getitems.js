@@ -4,9 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import {Modal,Button} from 'react-materialize';
 
-
-
-const baseURL = "http://127.0.0.1:5000"
+import {baseURL} from '../../config.js';
 
 class GetItems extends Component {
   constructor(props) {
@@ -15,7 +13,7 @@ class GetItems extends Component {
           loggedIn: localStorage.getItem('token'),
           shoppingLists:[],
           Items:[],
-        item:"",
+          item:"",
         loadedItems: false,
       };
       this.handleChange = this.handleChange.bind(this);
