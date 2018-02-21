@@ -33,7 +33,7 @@ describe('GetItems ', () => {
         expect(wrapper.length).toEqual(1)
     });
     it('should render without throwing an error', () => {
-        expect(wrapper.find("div")).toHaveLength(3)
+        expect(wrapper.find("div")).toHaveLength(7)
     })
     // it('should render form correctly', () => {
     //

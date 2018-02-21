@@ -25,7 +25,7 @@ class Register extends Component {
                 [event.target.name]: event.target.value
             })
         };
-
+// handles on register click
         onRegisterClick = (event) => {
         event.preventDefault();
         axios.post(`${baseURL}/auth/register`,

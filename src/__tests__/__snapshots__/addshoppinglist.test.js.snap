@@ -43,7 +43,7 @@ ShallowWrapper {
                         modalOptions={Object {}}
                         trigger={
                                 <button
-                                        className="btn-floating btn-large waves-effect waves-light red"
+                                        className="btn-floating btn-large waves-effect waves-light blue"
                                 >
                                         <i
                                                 className="material-icons"
@@ -142,7 +142,7 @@ ShallowWrapper {
                     modalOptions={Object {}}
                     trigger={
                               <button
-                                        className="btn-floating btn-large waves-effect waves-light red"
+                                        className="btn-floating btn-large waves-effect waves-light blue"
                               >
                                         <i
                                                   className="material-icons"
@@ -238,7 +238,7 @@ ShallowWrapper {
               modalOptions={Object {}}
               trigger={
                             <button
-                                          className="btn-floating btn-large waves-effect waves-light red"
+                                          className="btn-floating btn-large waves-effect waves-light blue"
                             >
                                           <i
                                                         className="material-icons"
@@ -393,7 +393,7 @@ ShallowWrapper {
               "header": "Add Shopping List",
               "modalOptions": Object {},
               "trigger": <button
-                className="btn-floating btn-large waves-effect waves-light red"
+                className="btn-floating btn-large waves-effect waves-light blue"
 >
                 <i
                                 className="material-icons"
@@ -732,7 +732,7 @@ ShallowWrapper {
                               modalOptions={Object {}}
                               trigger={
                                         <button
-                                                  className="btn-floating btn-large waves-effect waves-light red"
+                                                  className="btn-floating btn-large waves-effect waves-light blue"
                                         >
                                                   <i
                                                             className="material-icons"
@@ -831,7 +831,7 @@ ShallowWrapper {
                         modalOptions={Object {}}
                         trigger={
                                     <button
-                                                className="btn-floating btn-large waves-effect waves-light red"
+                                                className="btn-floating btn-large waves-effect waves-light blue"
                                     >
                                                 <i
                                                             className="material-icons"
@@ -927,7 +927,7 @@ ShallowWrapper {
                 modalOptions={Object {}}
                 trigger={
                                 <button
-                                                className="btn-floating btn-large waves-effect waves-light red"
+                                                className="btn-floating btn-large waves-effect waves-light blue"
                                 >
                                                 <i
                                                                 className="material-icons"
@@ -1082,7 +1082,7 @@ ShallowWrapper {
                 "header": "Add Shopping List",
                 "modalOptions": Object {},
                 "trigger": <button
-                  className="btn-floating btn-large waves-effect waves-light red"
+                  className="btn-floating btn-large waves-effect waves-light blue"
 >
                   <i
                                     className="material-icons"

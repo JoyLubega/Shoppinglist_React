@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import './App.css';
 import {Modal,Button} from 'react-materialize'
 import axios from 'axios';
+
 import {baseURL} from '../../config.js';
 
 
@@ -30,8 +31,8 @@ class AddShoppinglist extends Component {
           desc: this.state.desc
       },{headers: {"Authorization": localStorage.getItem("token")}})
       .then(() => {
-         window.location.reload();
-         // this.props.getlists();
+         // window.location.reload();
+         this.props.getlists();
 
       })
       .catch((error) => {
@@ -58,7 +59,7 @@ class AddShoppinglist extends Component {
 
                 <Modal
                   header='Add Shopping List'
-                  trigger={<button className="btn-floating btn-large waves-effect waves-light red" ><i className="material-icons">add_shopping_cart</i></button>}>
+                  trigger={<button className="btn-floating btn-large waves-effect waves-light blue" ><i className="material-icons">add_shopping_cart</i></button>}>
 
                     <div className="row">
                             <form className="col s12" onSubmit={this.onHandleAddshoppinglist}>

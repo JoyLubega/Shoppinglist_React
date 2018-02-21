@@ -8,8 +8,10 @@ import Dashboard from './dashboard.js';
 
 
 
+
 const Main = () => (
         <Switch>
+
           <Route path='/login' component={Login} />
           <Route path='/logout' component={Logout} />
           <Route path='/register' component={Register} />

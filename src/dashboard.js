@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import './App.css';
 import GetShoppinglist from './components/shoppinglists/getshoppinglists.js';
+import Pagination from './Pagination.js';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -28,17 +29,9 @@ handleClose = () => this.setState({open: false});
                           </div>
                         </nav>
                     </div>
-                    <div className="show container-fluid">
 
-
-                              <div className="col">
-                              <GetShoppinglist />
-                              </div>
-                              </div>
-
-
-
-    </div>
+                    <GetShoppinglist  />
+  </div>
     );
   }
 }

@@ -10,7 +10,7 @@ class Logout extends Component {
   }
 
   render() {
-    return <li><a href="/logout"><i className="material-icons right">assignment_returned</i></a></li>
+    return <li><a href="/login"><i className="material-icons right">assignment_returned</i></a></li>
   }
 }
 

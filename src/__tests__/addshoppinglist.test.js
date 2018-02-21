@@ -41,6 +41,11 @@ describe('<AddShoppinglist /> component', () => {
         const ListForm = wrapper.find("form");
         expect(ListForm).toHaveLength(1);
     });
+    it('should render Modal correctly', () => {
+
+        const ListForm = wrapper.find("Modal");
+        expect(ListForm).toHaveLength(1);
+    });
 
     it('should render form inputs', () => {
         expect(wrapper.find('#name').length).toEqual(1);

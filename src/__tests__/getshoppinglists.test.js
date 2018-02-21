@@ -32,31 +32,27 @@ describe('GetShoppinglist ', () => {
         const wrapper = shallow(<GetShoppinglist />)
         expect(wrapper.length).toEqual(1)
     });
+    // it checks if the component mounts.
     it('calls componentWillMount', () => {
     sinon.spy(GetShoppinglist.prototype, 'componentWillMount');
     const wrapper = mount(<GetShoppinglist />);
     expect(GetShoppinglist.prototype.componentWillMount.calledOnce).toBe(true);
   })
+  
 
     it('should render without throwing an error', () => {
       const wrapper = mount(<GetShoppinglist />);
-
-        expect(wrapper.find("div")).toHaveLength(7);
+        expect(wrapper.find("div")).toHaveLength(10);
     })
-    // it('should render form correctly', () => {
-    //
-    //     const ListForm = wrapper.find("form");
-    //     expect(ListForm).toHaveLength(0);
-    // });
 
-    // it('should render form inputs', () => {
-    //     expect(wrapper.find('#name').length).toEqual(1);
-    //     expect(wrapper.find('#desc').length).toEqual(1);
-    // });
-    // it('input should respond to change event and change the state', () => {
-    //       wrapper.find('#item').simulate('change', { target: { name: 'item', value: 'cake' } });
-    //       expect(wrapper.state('item')).toEqual('Birthday')
-    //   });
+
+
+    it('should render Modal correctly', () => {
+        const wrapper = mount(<GetShoppinglist />);
+        const texts = wrapper.find('Modal').map(node => node.text());
+        expect(texts).toHaveLength(1);
+    });
+
 
 
 
@@ -69,7 +65,7 @@ describe('GetShoppinglist ', () => {
 
 
 
-
+// Chridren components
 describe('<GetShoppinglist /> component contains child componenets', () => {
 
     it('should render <AddShoppinglist /> component', () => {

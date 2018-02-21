@@ -19,7 +19,7 @@ describe("<Dashboard /> component", () => {
     });
     const wrapper = shallow(<Dashboard />);
     it("should render without failing", () => {
-        expect(wrapper.find("div")).toHaveLength(5)
+        expect(wrapper.find("div")).toHaveLength(3)
 
     });
     it('should render <nav/> correctly', ()=> {

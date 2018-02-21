@@ -17,6 +17,11 @@ class Login extends Component {
         };
     }
 
+    /*
+        * Fired when input changes
+        * @param (event) event when input changes
+        * */
+
         onInputChanged = (event) => {
             this.setState({
               open: false,
@@ -25,17 +30,7 @@ class Login extends Component {
             })
         };
 
-
-        componentDidMount() {
-
-              // this.getShoppingLists();
-          }
-
-          componentWillmount() {
-
-
-          }
-
+// Handling the login click
         onLoginClick = (event) => {
         event.preventDefault();
         axios.post(`${baseURL}/auth/login`,
@@ -53,7 +48,7 @@ class Login extends Component {
 
             }.bind(this))
             .catch(function (error) {
-                // NotificationManager.error(error.response.data.Error);
+
                 toast.success(error.response.data.Error)
 
 
